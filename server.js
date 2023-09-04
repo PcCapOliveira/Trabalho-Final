@@ -13,10 +13,10 @@ mongoose.connect(process.env.URI_MONGO);
 
 app.use(express.json());
 
-app.use("/api/posts", postsRoutes);
-app.use("/api/work", workRoutes);
-app.use("/api/auth", authRoutes);
-app.use("/api/categories", categoriesRoutes);
+app.use("/api", postsRoutes);
+app.use("/api", workRoutes);
+app.use("/api", authRoutes);
+app.use("/api", categoriesRoutes);
 
 app.listen(8000, () => {
   console.log("Servidor rodando!");
