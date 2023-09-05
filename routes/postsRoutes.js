@@ -13,7 +13,6 @@ const postSchema = new mongoose.Schema({
 });
 
 const Post = mongoose.model("Post", postSchema);
-// Função para criar um post usando post no Thunderclint
 const savePost = async (req, res) => {
   const newPost = new Post({
     title: req.body.title,
@@ -30,7 +29,6 @@ const savePost = async (req, res) => {
     res.status(500).send("Erro ao criar o post.");
   }
 };
-// Função para Deletar um post usando Delete no Thunderclint
 async function deletePost(req, res) {
   const postId = req.params.id;
   try {
@@ -48,7 +46,6 @@ async function deletePost(req, res) {
     res.status(500).send("Erro ao excluir o post");
   }
 }
-// Função para atualizar um post usando PUT ou PATCH
 async function updatePost(req, res) {
   const postId = req.params.id;
   const updateData = req.body;
