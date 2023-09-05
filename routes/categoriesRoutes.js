@@ -76,5 +76,9 @@ async function getAllCategories(req, res) {
     res.status(500).send("Erro ao obter as categorias");
   }
 }
+router.get("/categories", getAllCategories);
+router.post("/categories", saveCategory);
+router.delete("/categories/:id", deleteCategory);
+router.put("/categories/:id", updateCategory);
 
 export default router;
