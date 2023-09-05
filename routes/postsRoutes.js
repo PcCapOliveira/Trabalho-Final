@@ -74,11 +74,11 @@ async function updatePost(req, res) {
 
 async function getAllPosts(req, res) {
   try {
-    //Aqui vai o método do mongo para pegar todos os registros. find()
-    console.log("Post Atualizado com sucesso! GETALL");
-    res.status(201).json({ message: "Post Atualizado com sucesso" });
+    const Post = await Post.find();
+    res.status(200).json(posts);
   } catch (err) {
-    console.log("Ocorreu um erro:", Object.keys(err.keyValue)[0]);
+    console.log("Ocorreu um erro:", err);
+    res.status(500).send("Erro ao obter os Posts");
   }
 }
 
