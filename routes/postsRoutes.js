@@ -74,7 +74,7 @@ async function updatePost(req, res) {
 
 async function getAllPosts(req, res) {
   try {
-    const Post = await Post.find();
+    const posts = await Post.find();
     res.status(200).json(posts);
   } catch (err) {
     console.log("Ocorreu um erro:", err);

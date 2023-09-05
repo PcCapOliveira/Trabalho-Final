@@ -73,9 +73,8 @@ async function updateWork(req, res) {
 
 async function getAllWorks(req, res) {
   try {
-    // Aqui vai o método do mongo para pegar todos os registros. find()
-    console.log("Works obtidos com sucesso! GETALL");
-    res.status(200).json({ message: "Works obtidos com sucesso" });
+    const works = await Work.find();
+    res.status(200).json(works);
   } catch (err) {
     console.log("Ocorreu um erro:", err);
     res.status(500).send("Erro ao obter os works");
