@@ -20,7 +20,7 @@ mongoose
 Os que precisam utilizar
 post
 getAll
-patch // tem que ter ID
+patch ou put // tem que ter ID
 delete // tem que ter ID
 
 criar schema do post
